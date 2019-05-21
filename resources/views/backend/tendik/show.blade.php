@@ -53,7 +53,10 @@
                         <label for="tanggal_lahir"><strong>Tanggal Lahir</strong></label>
                         {{ Form::input('date', 'tanggal_lahir', null, ['class' => 'form-control-plaintext', 'id' => 'nip', 'readonly' => 'readonly']) }}
                     </div>
-
+                    <div class="form-group">
+                        <label for="email"><strong>Email</strong></label>
+                        {{ Form::text('email', null, ['class' => 'form-control-plaintext', 'readonly' => 'readonly']) }}
+                    </div>
                     <div class="form-group">
                         <label for="nohp"><strong>No. HP</strong></label>
                         {{ Form::text('nohp', null, ['class' => 'form-control-plaintext', 'id' => 'nohp', 'readonly' => 'readonly']) }}

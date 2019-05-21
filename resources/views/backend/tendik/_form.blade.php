@@ -20,6 +20,10 @@
     {{ Form::text('tempat_lahir', null, ['class' => 'form-control', 'id' => 'tempat_lahir', 'placeholder' => 'Tempat Lahir Tendik']) }}
 </div>
 <div class="form-group">
+    <label for="email">Email</label>
+    {{ Form::text('email', null, ['class' => 'form-control', 'id' => 'email', 'placeholder' => 'Email Tendik']) }}
+</div>
+<div class="form-group">
     <label for="nohp">No. HP</label>
     {{ Form::text('nohp', null, ['class' => 'form-control', 'id' => 'nohp', 'placeholder' => 'No HP Tendik']) }}
 </div>

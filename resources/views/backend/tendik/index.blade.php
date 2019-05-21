@@ -19,7 +19,7 @@
 
                 {{-- CARD HEADER--}}
                 <div class="card-header">
-                    <strong>List Tendik </strong>
+                     <strong>List Tendik </strong>
                 </div>
 
                 {{-- CARD BODY--}}

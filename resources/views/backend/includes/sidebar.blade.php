@@ -35,6 +35,9 @@
                         </a>
                     </li>
 
+
+
+
                 </ul>
             </li>
 
@@ -63,6 +66,13 @@
                     </li>
                 </ul>
             </li>
+
+             {{-- Menu Tendik--}}
+                    <li class="nav-item">
+                        <a class="nav-link" href="{{ route('admin.tendik.index') }}">
+                            <i class="nav-icon fas fa-users"></i> Kelola Tendik
+                        </a>
+                    </li> 
 
         </ul>
     </nav>

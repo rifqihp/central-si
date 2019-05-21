@@ -11,7 +11,7 @@ class TendikController extends Controller
    
 
     public $validation_rules = [
-        // 'email' => 'required|email',
+        'email' => 'required|email',
         'nip' => 'required',
         'nama' => 'required',
         'nik' => 'required',
