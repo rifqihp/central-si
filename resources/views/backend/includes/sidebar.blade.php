@@ -64,6 +64,14 @@
                 </ul>
             </li>
 
+            {{--kelola tendik--}}
+            <li class="nav-item">
+                        <a class="nav-link" href="{{ route('admin.tendik.index') }}">
+                            <i class="nav-icon fas fa-minus"></i> Kelola Tendik
+                        </a>
+                    </li>
+
+
         </ul>
     </nav>
 
