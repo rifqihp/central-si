@@ -3,7 +3,7 @@
 @section('breadcrumb')
     {!! cui_breadcrumb([
         'Home' => route('admin.home'),
-        'tendik' => route('admin.tendik.index'),
+        'Tendik' => route('admin.tendik.index'),
         'Edit' => '#'
     ]) !!}
 @endsection
@@ -14,22 +14,26 @@
 
 @section('content')
     <div class="row justify-content-center">
+
         <div class="col-md-12">
+
             <div class="card">
 
                 {{ Form::open(['route' => 'admin.tendik.store', 'method' => 'post']) }}
 
-                {{-- CARD HEADER --}}
+                {{-- CARD HEADER--}}
                 <div class="card-header">
-                    Tambah tendik
+                    Tambah Tendik
                 </div>
 
-                {{-- CARD BODY --}}
+                {{-- CARD BODY--}}
+
                 <div class="card-body">
                     @include('backend.tendik._form')
                 </div>
 
-                {{-- CARD FOOTER --}}
+                {{--CARD FOOTER--}}
+
                 <div class="card-footer">
                     <input type="submit" value="Simpan" class="btn btn-primary"/>
                 </div>

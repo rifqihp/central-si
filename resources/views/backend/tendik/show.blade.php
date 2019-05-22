@@ -21,17 +21,15 @@
 
                 {{-- CARD HEADER--}}
                 <div class="card-header">
+
                     Tendik
+
                 </div>
 
                 {{-- CARD BODY--}}
                 <div class="card-body">
 
                     {{ Form::model($tendik, []) }}
-                    <div class="form-group">
-                        <label for="nik"><strong>NIK</strong></label>
-                        {{ Form::text('nik', null, ['class' => 'form-control-plaintext', 'id' => 'nik', 'readonly' => 'readonly']) }}
-                    </div>
 
                     <div class="form-group">
                         <label for="nama"><strong>Nama</strong></label>
@@ -42,7 +40,12 @@
                         <label for="nip"><strong>NIP</strong></label>
                         {{ Form::text('nip', null, ['class' => 'form-control-plaintext', 'id' => 'nip', 'readonly' => 'readonly']) }}
                     </div>
-                
+                    
+                    <div class="form-group">
+                        <label for="nik"><strong>NIK</strong></label>
+                        {{ Form::text('nik', null, ['class' => 'form-control-plaintext', 'id' => 'nik', 'readonly' => 'readonly']) }}
+                    </div>
+
                     <div class="form-group">
                         <label for="tempat_lahir"><strong>Tempat Lahir</strong></label>
                         {{ Form::text('tempat_lahir', null, ['class' => 'form-control-plaintext', 'id' => 'tempat_lahir', 'readonly' => 'readonly']) }}
@@ -50,7 +53,7 @@
 
                     <div class="form-group">
                         <label for="tanggal_lahir"><strong>Tanggal Lahir</strong></label>
-                        {{ Form::input('date', 'tanggal_lahir', null, ['class' => 'form-control-plaintext', 'id' => 'nip', 'readonly' => 'readonly']) }}
+                        {{ Form::input('date', 'tanggal_lahir', null, ['class' => 'form-control-plaintext', 'id' => 'tanggal_lahir', 'readonly' => 'readonly']) }}
                     </div>
 
                     <div class="form-group">
@@ -66,7 +69,7 @@
                     <div class="form-group">
                         <label for="photo"><strong>Photo</strong></label>
                     </div>
-
+                    
                     {{ Form::close() }}
 
                 </div>

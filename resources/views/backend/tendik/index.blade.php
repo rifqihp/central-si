@@ -3,7 +3,7 @@
 @section('breadcrumb')
     {!! cui_breadcrumb([
         'Home' => route('admin.home'),
-        'tendik' => route('admin.tendik.index'),
+        'Tendik' => route('admin.tendik.index'),
         'Index' => '#'
     ]) !!}
 @endsection
@@ -19,7 +19,6 @@
 
                 {{-- CARD HEADER--}}
                 <div class="card-header">
-                    tendik
                 </div>
 
                 {{-- CARD BODY--}}
@@ -27,12 +26,15 @@
 
                     <div class="row justify-content-end">
                         <div class="col-md-6 text-right">
-                         <form method="post" action="{{ route('admin.mahasiswacari.show') }}" class="form-inline">
+
+                            <form method="post" action="{{ route('admin.tendikcari.show') }}" class="form-inline">
                                 {{ csrf_field() }}
+                                
                                 <input type="text" name="keyword" class="form-control" value="@if(isset($keyword)) {{ $keyword }} @endif" placeholder="Masukkan Keyword" />
+
                                 <input type="submit" name="submit" class="btn btn-primary" value="Cari" />
                             </form>
-                           
+
                         </div>
                         <div class="col-md-6 justify-content-end">
                             <div class="row justify-content-end">
@@ -44,25 +46,36 @@
                     <table class="table table-striped">
                         <thead>
                         <tr>
-                            <th class="text-center">Nik</th>
                             <th class="text-center">Nama</th>
-                            <th class="text-center">Nip</th>
+                            <th class="text-center">NIP</th>
+                            <th class="text-center">NIK</th>
                             <th class="text-center">Aksi</th>
                         </tr>
                         </thead>
                         <tbody>
-                        @foreach($tendiks as $tendik)
+                        
+                        @forelse($tendiks as $tendik)
                             <tr>
-                                <td>{{ $tendik->nik }}</td>
-                                <td class="text-center">{{ $tendik->nama }}</td>
+                                <td>{{ $tendik->nama }}</td>
                                 <td class="text-center">{{ $tendik->nip }}</td>
+                                <td class="text-center">{{ $tendik->nik }}</td>
                                 <td class="text-center">
                                     {!! cui_btn_view(route('admin.tendik.show', [$tendik->id])) !!}
                                     {!! cui_btn_edit(route('admin.tendik.edit', [$tendik->id])) !!}
                                     {!! cui_btn_delete(route('admin.tendik.destroy', [$tendik->id]), "Anda yakin akan menghapus data tendik ini?") !!}
                                 </td>
                             </tr>
-                        @endforeach
+
+                        @empty
+                            <tr>
+                                <td colspan="4" class="text-center">
+                                    Data Tendik Belum Ada
+                                </td>
+                            </tr>    
+                            
+                        @endforelse
+
+
                         </tbody>
                     </table>
 
@@ -76,6 +89,7 @@
                             </div>
                         </div>
                     </div>
+
 
                 </div>
             </div>

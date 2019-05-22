@@ -9,8 +9,10 @@
 @endsection
 
 @section('toolbar')
+
     {!! cui_toolbar_btn(route('admin.tendik.create'), 'icon-plus', 'Tambah Tendik') !!}
     {!! cui_toolbar_btn(route('admin.tendik.index'), 'icon-list', 'List Tendik') !!}
+
 @endsection
 
 @section('content')
