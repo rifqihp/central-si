@@ -21,7 +21,9 @@
 
                 {{-- CARD HEADER--}}
                 <div class="card-header">
-                    tendik
+
+                    Tendik
+
                 </div>
 
                 {{-- CARD BODY--}}
@@ -38,7 +40,7 @@
                         <label for="nip"><strong>NIP</strong></label>
                         {{ Form::text('nip', null, ['class' => 'form-control-plaintext', 'id' => 'nip', 'readonly' => 'readonly']) }}
                     </div>
-
+                    
                     <div class="form-group">
                         <label for="nik"><strong>NIK</strong></label>
                         {{ Form::text('nik', null, ['class' => 'form-control-plaintext', 'id' => 'nik', 'readonly' => 'readonly']) }}
@@ -51,17 +53,23 @@
 
                     <div class="form-group">
                         <label for="tanggal_lahir"><strong>Tanggal Lahir</strong></label>
-                        {{ Form::input('date', 'tanggal_lahir', null, ['class' => 'form-control-plaintext', 'id' => 'nip', 'readonly' => 'readonly']) }}
+                        {{ Form::input('date', 'tanggal_lahir', null, ['class' => 'form-control-plaintext', 'id' => 'tanggal_lahir', 'readonly' => 'readonly']) }}
                     </div>
+
                     <div class="form-group">
                         <label for="email"><strong>Email</strong></label>
-                        {{ Form::text('email', null, ['class' => 'form-control-plaintext', 'readonly' => 'readonly']) }}
+                        {{ Form::text('email', null, ['class' => 'form-control-plaintext', 'id' => 'email', 'readonly' => 'readonly']) }}
                     </div>
+
                     <div class="form-group">
                         <label for="nohp"><strong>No. HP</strong></label>
                         {{ Form::text('nohp', null, ['class' => 'form-control-plaintext', 'id' => 'nohp', 'readonly' => 'readonly']) }}
                     </div>
 
+                    <div class="form-group">
+                        <label for="photo"><strong>Photo</strong></label>
+                    </div>
+                    
                     {{ Form::close() }}
 
                 </div>

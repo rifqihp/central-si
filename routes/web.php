@@ -42,6 +42,7 @@ Route::middleware(['auth'])->group( function(){
 
     /** Routing untuk tugas mulai dari sini */
 
+
      /** Routing untuk tendik */
     
     Route::post('/admin/tendik/cari', 'TendikCariController@show')->name('admin.tendikcari.show'); //routing pencarian tendik

@@ -19,9 +19,6 @@
 
                 {{-- CARD HEADER--}}
                 <div class="card-header">
-
-                     <strong>List Tendik </strong>
-
                 </div>
 
                 {{-- CARD BODY--}}
@@ -29,6 +26,7 @@
 
                     <div class="row justify-content-end">
                         <div class="col-md-6 text-right">
+
                             <form method="post" action="{{ route('admin.tendikcari.show') }}" class="form-inline">
                                 {{ csrf_field() }}
                                 
@@ -36,6 +34,7 @@
 
                                 <input type="submit" name="submit" class="btn btn-primary" value="Cari" />
                             </form>
+
                         </div>
                         <div class="col-md-6 justify-content-end">
                             <div class="row justify-content-end">
@@ -60,7 +59,6 @@
                                 <td>{{ $tendik->nama }}</td>
                                 <td class="text-center">{{ $tendik->nip }}</td>
                                 <td class="text-center">{{ $tendik->nik }}</td>
-
                                 <td class="text-center">
                                     {!! cui_btn_view(route('admin.tendik.show', [$tendik->id])) !!}
                                     {!! cui_btn_edit(route('admin.tendik.edit', [$tendik->id])) !!}
@@ -77,6 +75,7 @@
                             
                         @endforelse
 
+
                         </tbody>
                     </table>
 
@@ -92,15 +91,9 @@
                     </div>
 
 
-                </div><!--card-body-->
-
-                {{-- CARD FOOTER--}}
-                <div class="card-footer">
                 </div>
-
-            </div><!--card-->
-        </div><!--col-->
-    </div><!--row-->
-
+            </div>
+        </div>
+    </div>
+    </div>
 @endsection
- 

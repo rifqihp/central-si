@@ -14,7 +14,9 @@
 
 @section('content')
     <div class="row justify-content-center">
-        <div class="col">
+
+        <div class="col-md-12">
+
             <div class="card">
 
                 {{ Form::open(['route' => 'admin.tendik.store', 'method' => 'post']) }}
@@ -25,18 +27,20 @@
                 </div>
 
                 {{-- CARD BODY--}}
+
                 <div class="card-body">
                     @include('backend.tendik._form')
                 </div>
 
                 {{--CARD FOOTER--}}
+
                 <div class="card-footer">
                     <input type="submit" value="Simpan" class="btn btn-primary"/>
                 </div>
 
                 {{ Form::close() }}
             </div>
-
         </div>
     </div>
+
 @endsection
