@@ -19,7 +19,9 @@
 
                 {{-- CARD HEADER--}}
                 <div class="card-header">
-                    Tendik
+
+                     <strong>List Tendik </strong>
+
                 </div>
 
                 {{-- CARD BODY--}}
@@ -29,7 +31,9 @@
                         <div class="col-md-6 text-right">
                             <form method="post" action="{{ route('admin.tendikcari.show') }}" class="form-inline">
                                 {{ csrf_field() }}
+                                
                                 <input type="text" name="keyword" class="form-control" value="@if(isset($keyword)) {{ $keyword }} @endif" placeholder="Masukkan Keyword" />
+
                                 <input type="submit" name="submit" class="btn btn-primary" value="Cari" />
                             </form>
                         </div>
@@ -44,17 +48,19 @@
                         <thead>
                         <tr>
                             <th class="text-center">Nama</th>
-                            <th class="text-center">NIK</th>
                             <th class="text-center">NIP</th>
+                            <th class="text-center">NIK</th>
                             <th class="text-center">Aksi</th>
                         </tr>
                         </thead>
                         <tbody>
+                        
                         @forelse($tendiks as $tendik)
                             <tr>
                                 <td>{{ $tendik->nama }}</td>
-                                <td class="text-center">{{ $tendik->nik }}</td>
                                 <td class="text-center">{{ $tendik->nip }}</td>
+                                <td class="text-center">{{ $tendik->nik }}</td>
+
                                 <td class="text-center">
                                     {!! cui_btn_view(route('admin.tendik.show', [$tendik->id])) !!}
                                     {!! cui_btn_edit(route('admin.tendik.edit', [$tendik->id])) !!}
@@ -70,6 +76,7 @@
                             </tr>    
                             
                         @endforelse
+
                         </tbody>
                     </table>
 
@@ -84,9 +91,16 @@
                         </div>
                     </div>
 
+
+                </div><!--card-body-->
+
+                {{-- CARD FOOTER--}}
+                <div class="card-footer">
                 </div>
-            </div>
-        </div>
-    </div>
-    </div>
+
+            </div><!--card-->
+        </div><!--col-->
+    </div><!--row-->
+
 @endsection
+ 
