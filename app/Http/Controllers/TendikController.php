@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+
 use App\Tendik;
 use App\User;
 use Illuminate\Http\Request;
@@ -100,5 +101,5 @@ class TendikController extends Controller
         return redirect()->route('admin.tendik.index');
     }
 
-
 }
+

@@ -59,6 +59,19 @@ Route::middleware(['auth'])->group( function(){
     Route::get('pembimbing/submit', 'PembimbingSubmissionController@create')->name('admin.pembimbing.create');
     Route::post('pembimbing/submit', 'PembimbingSubmissionController@store')->name('admin.pembimbing.store');
 
+    // Routing pengelolaan tendik
+    Route::post('/admin/tendik/cari', 'TendikCariController@show')->name('admin.tendikcari.show'); //routing pencarian tendik
+    Route::get('/admin/tendik/cari', 'TendikController@index')->name('admin.tendikcari.index'); //routing pencarian mahasiswa
+    Route::get('/admin/tendik', 'TendikController@index')->name('admin.tendik.index');  //routing lihat daftar tendik
+    Route::post('/admin/tendik', 'TendikController@store')->name('admin.tendik.store'); //routing simpan data tendik baru
+    Route::get('/admin/tendik/create', 'TendikController@create')->name('admin.tendik.create'); //routing tampilkan form data tendik baru
+    Route::delete('/admin/tendik/{tendik}', 'TendikController@destroy')->name('admin.tendik.destroy'); //routing hapus data tendik baru
+    Route::patch('/admin/tendik/{tendik}', 'TendikController@update')->name('admin.tendik.update'); //routing simpan perubahan data tendik
+    Route::get('/admin/tendik/{tendik}', 'TendikController@show')->name('admin.tendik.show'); //routing tampilkan detail tendik
+    Route::get('/admin/tendik/{tendik}/edit', 'TendikController@edit')->name('admin.tendik.edit');  //routing tampilkan form edit tendik
+
+
+
 });
 
 Route::get('/', function () {

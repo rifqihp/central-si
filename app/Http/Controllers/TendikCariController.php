@@ -15,9 +15,9 @@ class TendikCariController extends Controller
         $filter = '%'.$keyword.'%';
 
         $tendiks = Tendik::where('nama', 'like', $filter)
-                       ->orWhere('nip', 'like', $filter)
-                       ->orWhere('nik', 'like', $filter)
-                       ->paginate(25);
+            ->orWhere('nik', 'like', $filter)
+            ->orWhere('nip', 'like', $filter)
+            ->paginate(25);
 
         return view('backend.tendik.index', compact('tendiks', 'keyword'));
 
