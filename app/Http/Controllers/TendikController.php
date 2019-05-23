@@ -16,6 +16,10 @@ class TendikController extends Controller
     	'nip' => 'required',
         'nama' => 'required',
         'nik' => 'required',
+        // 'photo' => 'image|mimes:jpeg, jpg, png'
+        // 'photo' => 'image',
+        
+        // 'photo' => 'mimes:jpeg, jpg, png'
     ];
 
 
@@ -53,11 +57,23 @@ class TendikController extends Controller
             'nik',
             'tempat_lahir',
             'tanggal_lahir',
-            'nohp'));
+            'nohp',
+            'photo',
+        ));
+
+        if ($request->file('photo')->isValid()) {
+         
+            $filename = uniqid('tendik-');
+            $fileext = $request->file('photo')->extension();
+            $filenameext = $filename.'.'.$fileext;
+
+            $filepath = $request->photo->storeAs('foto_tendik', $filenameext);
+        }
+
 
         session()->flash('flash_success', 'Berhasil menambahkan data tendik atas nama '. $request->input('nama'));
         return redirect()->route('admin.tendik.show', [$user->id]);
-    }
+    } 
 
      public function show(Tendik $tendik)
     {
@@ -79,13 +95,15 @@ class TendikController extends Controller
             'nik',
             'tempat_lahir',
             'tanggal_lahir',
-            'nohp'));
+            'nohp',
+            'photo'));
 
         $tendik->user->update([
             'password' => bcrypt('secret'),
             'email' => request('email'),
             'status' => 1,
         ]);
+
 
         session()->flash('flash_success', 'Berhasil mengupdate data tendik '.$tendik->nama);
         return redirect()->route('admin.tendik.show', [$tendik->id]);
