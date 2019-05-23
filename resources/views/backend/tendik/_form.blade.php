@@ -1,3 +1,5 @@
+
+
 <div class="form-group">
     <label for="nik">NIK</label>
     {{ Form::text('nik', null, ['class' => 'form-control', 'id' => 'nik', 'placeholder' => 'NIK Tendik']) }}
@@ -34,11 +36,10 @@
 </div>
 
 <div class="form-group">
-    <label for="nohp">Photo</label>
-    <div class="custom-file">
-        <input type="file" class="custom-file-input" id="customFile">
-        <label class="custom-file-label" for="customFile">Photo</label>
-    </div>
+    <label for="photo">Upload Foto Tendik</label>
+    <br>
+    {{ Form::file('photo', null, ['class' => 'form-control', 'id' => 'photo', 'placeholder' => 'Foto Tendik']) }}
+    <!-- <input type="file" class="form-control-file" id="photo"> -->
 </div>
 
 

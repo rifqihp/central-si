@@ -19,7 +19,8 @@
 
             <div class="card">
 
-                {{ Form::open(['route' => 'admin.tendik.store', 'method' => 'post']) }}
+                
+                {{ Form::open(['route' => 'admin.tendik.store', 'method' => 'post', 'files'=> 'true']) }}
 
                 {{-- CARD HEADER--}}
                 <div class="card-header">

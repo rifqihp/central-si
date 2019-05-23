@@ -69,7 +69,9 @@
 
                     <div class="form-group">
                         <label for="photo"><strong>Photo</strong></label>
+                        {{ Form::text('photo', null, ['class' => 'form-control-plaintext', 'id' => 'photo', 'readonly' => 'readonly']) }}
                     </div>
+
                     
                     {{ Form::close() }}
 
