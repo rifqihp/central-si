@@ -3,14 +3,15 @@
 @section('breadcrumb')
     {!! cui_breadcrumb([
         'Home' => route('admin.home'),
-        'tendik' => route('admin.tendik.index'),
+        'Tendik' => route('admin.tendik.index'),
         'Detail' => '#'
     ]) !!}
 @endsection
 
 @section('toolbar')
-    {!! cui_toolbar_btn_delete(route('admin.tendik.destroy', [$tendik->id]), $tendik->id, 'icon-trash', 'Hapus tendik', 'Anda yakin akan menghapus tendik ini?') !!}
-    {!! cui_toolbar_btn(route('admin.tendik.index'), 'icon-list', 'List tendik') !!}
+    {!! cui_toolbar_btn(route('admin.tendik.edit', [$tendik->id]), 'icon-note', 'Edit Tendik') !!}
+    {!! cui_toolbar_btn_delete(route('admin.tendik.destroy', [$tendik->id]), $tendik->id, 'icon-trash', 'Hapus Tendik', 'Anda yakin akan menghapus tendik ini?') !!}
+        {!! cui_toolbar_btn(route('admin.tendik.index'), 'icon-list', 'List tendik') !!}
     {!! cui_toolbar_btn(route('admin.tendik.create'), 'icon-plus', 'Tambah tendik') !!}
 @endsection
 
