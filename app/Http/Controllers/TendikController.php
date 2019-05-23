@@ -2,7 +2,6 @@
 
 namespace App\Http\Controllers;
 
-
 use App\Tendik;
 use App\User;
 use Illuminate\Http\Request;
@@ -13,7 +12,8 @@ class TendikController extends Controller
 
     public $validation_rules = [
         'email' => 'required|email',
-        'nip' => 'required',
+        // 'email' => 'required|email|unique:users,email',
+    	'nip' => 'required',
         'nama' => 'required',
         'nik' => 'required',
     ];
@@ -101,5 +101,5 @@ class TendikController extends Controller
         return redirect()->route('admin.tendik.index');
     }
 
-}
 
+}
