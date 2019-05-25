@@ -16,8 +16,10 @@ class TendikController extends Controller
     	'nip' => 'required',
         'nama' => 'required',
         'nik' => 'required',
+        'photo' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
         // 'photo' => 'image|mimes:jpeg, jpg, png'
         // 'photo' => 'image',
+        // 'photo' => 'mimes:jpeg,bmp,png'
         
         // 'photo' => 'mimes:jpeg, jpg, png'
     ];
