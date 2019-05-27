@@ -69,10 +69,19 @@
 
                     <div class="form-group">
                         <label for="photo"><strong>Photo</strong></label>
-                        {{ Form::text('photo', null, ['class' => 'form-control-plaintext', 'id' => 'photo', 'readonly' => 'readonly']) }}
+<!--                         {{ Form::text('photo', null, ['class' => 'form-control-plaintext', 'id' => 'photo', 'readonly' => 'readonly']) }}
+ -->                    </div>
+
+                    <div class="form-group">
+                        
+                        <!-- <label for="photo"><strong>Photo</strong></label> -->
+                        <img src="{{URL::asset('storage/foto_tendik/'.$tendik->photo)}}" style="width:150px; height:150px; float:left; 
+                        border-radius:50%; margin-right:25px;">
                     </div>
 
                     
+                     
+
                     {{ Form::close() }}
 
                 </div>

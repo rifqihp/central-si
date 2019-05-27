@@ -36,6 +36,13 @@
 </div>
 
 <div class="form-group">
+                        <!-- <label for="photo"><strong>Photo</strong></label> -->
+<img src="{{URL::asset('storage/foto_tendik/'.$tendik->photo)}}" style="width:150px; height:150px; float:left; 
+                        border-radius:50%; margin-right:25px;">
+</div>
+
+
+<div class="form-group">
     <label for="photo">Upload Foto Tendik</label>
     <br>
     <!-- {{ Form::text('photo', null, ['class' => 'form-control', 'id' => 'photo', 'placeholder' => 'Foto Tendik']) }} -->

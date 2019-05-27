@@ -28,7 +28,7 @@
 
                 {{-- CARD BODY--}}
                 <div class="card-body">
-                    @include('backend.tendik._form')
+                    @include('backend.tendik._form_edit')
                 </div>
 
                 {{-- CARD FOOTER--}}

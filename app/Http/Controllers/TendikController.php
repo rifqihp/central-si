@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Tendik;
 use App\User;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Storage;
 
 class TendikController extends Controller
 {
@@ -83,8 +84,9 @@ class TendikController extends Controller
             $fileext = $request->file('photo')->extension();
             $filenameext = $filename.'.'.$fileext;
 
-            $filepath = $request->photo->storeAs('foto_tendik', $filenameext);
+            $filepath = $request->photo->storeAs('public/foto_tendik', $filenameext);
         }
+        
         $data=$request->except('photo', 'email');
         $data['photo'] = $filenameext;
         $user->tendik()->create($data);
@@ -97,6 +99,7 @@ class TendikController extends Controller
 
      public function show(Tendik $tendik)
     {
+        // dd($tendik);
         return view('backend.tendik.show', compact('tendik'));
     }
 
@@ -107,6 +110,7 @@ class TendikController extends Controller
 
      public function update(Request $request, Tendik $tendik)
     {
+
         $this->validate($request, $this->validation_rules);
 
         // $tendik->update($request->only(
@@ -126,17 +130,20 @@ class TendikController extends Controller
         ]);
 
         if ($request->file('photo')->isValid()) {
+
+            Storage::disk('public')->delete('foto_tendik'.$tendik->photo);
          
             $filename = uniqid('tendik-');
             $fileext = $request->file('photo')->extension();
             $filenameext = $filename.'.'.$fileext;
 
-            $filepath = $request->photo->storeAs('foto_tendik', $filenameext);
+            $filepath = $request->photo->storeAs('public/foto_tendik', $filenameext);
         }
         $data=$request->except('photo', 'email');
         $data['photo'] = $filenameext;
         $tendik->update($data);
 
+    
 
         session()->flash('flash_success', 'Berhasil mengupdate data tendik '.$tendik->nama);
         return redirect()->route('admin.tendik.show', [$tendik->id]);
