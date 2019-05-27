@@ -39,7 +39,7 @@
     <label for="photo">Upload Foto Tendik</label>
     <br>
     {{ Form::file('photo', null, ['class' => 'form-control', 'id' => 'photo', 'placeholder' => 'Foto Tendik']) }}
-    <!-- <input type="file" class="form-control-file" id="photo"> -->
+        <!-- <input type="file" class="form-control-file" id="photo"> -->
 </div>
 
 
