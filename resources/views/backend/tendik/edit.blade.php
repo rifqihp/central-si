@@ -19,7 +19,7 @@
         <div class="col-md-12">
             <div class="card">
 
-                {{ Form::model($tendik, ['route' => ['admin.tendik.update', $tendik->id], 'method' => 'patch']) }}
+                {{ Form::model($tendik, ['route' => ['admin.tendik.update', $tendik->id], 'method' => 'patch', 'enctype' => 'multipart/form-data']) }}
 
                 {{--CARD HEADER --}}
                 <div class="card-header">

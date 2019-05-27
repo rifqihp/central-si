@@ -38,6 +38,7 @@
 <div class="form-group">
     <label for="photo">Upload Foto Tendik</label>
     <br>
+    <!-- {{ Form::text('photo', null, ['class' => 'form-control', 'id' => 'photo', 'placeholder' => 'Foto Tendik']) }} -->
     {{ Form::file('photo', null, ['class' => 'form-control', 'id' => 'photo', 'placeholder' => 'Foto Tendik']) }}
         <!-- <input type="file" class="form-control-file" id="photo"> -->
 </div>
