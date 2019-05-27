@@ -13,10 +13,10 @@ class TendikController extends Controller
     public $validation_rules = [
         'email' => 'required|email',
         // 'email' => 'required|email|unique:users,email',
-    	'nip' => 'required',
+        'nip' => 'required',
         'nama' => 'required',
         'nik' => 'required',
-        // 'photo' => 'image|mimes:jpeg, jpg, png',
+        'photo' => 'image',
         // 'photo' => 'image',
         
         // 'photo' => 'mimes:jpeg, jpg, png'
@@ -51,15 +51,15 @@ class TendikController extends Controller
             'type' => User::TENDIK
         ]);
 
-        $user->tendik()->create($request->only(
-            'nip',
-            'nama',
-            'nik',
-            'tempat_lahir',
-            'tanggal_lahir',
-            'nohp',
-            'photo'
-        ));
+        // $user->tendik()->create($request->only(
+        //     'nip',
+        //     'nama',
+        //     'nik',
+        //     'tempat_lahir',
+        //     'tanggal_lahir',
+        //     'nohp',
+        //     'photo'
+        // ));
 
         // $tendik = new Tendik();
         // $tendik->nik = $request->input('nik');
@@ -78,7 +78,9 @@ class TendikController extends Controller
 
             $filepath = $request->photo->storeAs('foto_tendik', $filenameext);
         }
-
+        $data=$request->except('photo', 'email');
+        $data['photo'] = $filenameext;
+        $user->tendik()->create($data);
         // $tendik->save();
 
 
@@ -100,21 +102,33 @@ class TendikController extends Controller
     {
         $this->validate($request, $this->validation_rules);
 
-        $tendik->update($request->only(
-            'nip',
-            'nama',
-            'nik',
-            'tempat_lahir',
-            'tanggal_lahir',
-            'nohp',
-            'photo'
-        ));
+        // $tendik->update($request->only(
+        //     'nip',
+        //     'nama',
+        //     'nik',
+        //     'tempat_lahir',
+        //     'tanggal_lahir',
+        //     'nohp',
+        //     'photo'
+        // ));
 
         $tendik->user->update([
             'password' => bcrypt('secret'),
             'email' => request('email'),
             'status' => 1,
         ]);
+
+        if ($request->file('photo')->isValid()) {
+         
+            $filename = uniqid('tendik-');
+            $fileext = $request->file('photo')->extension();
+            $filenameext = $filename.'.'.$fileext;
+
+            $filepath = $request->photo->storeAs('foto_tendik', $filenameext);
+        }
+        $data=$request->except('photo', 'email');
+        $data['photo'] = $filenameext;
+        $tendik->update($data);
 
 
         session()->flash('flash_success', 'Berhasil mengupdate data tendik '.$tendik->nama);
@@ -133,3 +147,6 @@ class TendikController extends Controller
 
 
 }
+ 
+
+
