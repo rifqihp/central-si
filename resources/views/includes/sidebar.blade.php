@@ -82,9 +82,13 @@
                         </a>
                     </li>
                 </ul>
-            </li>
+            </li>          
+
         </ul>
     </nav>
 
     <button class="sidebar-minimizer brand-minimizer" type="button"></button>
-</div><!--sidebar-->
+</div>
+
+<!--sidebar-->
+  

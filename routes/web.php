@@ -41,8 +41,24 @@ Route::middleware(['auth'])->group( function(){
     Route::get('/admin/mahasiswa/{mahasiswa}/edit', 'MahasiswaController@edit')->name('admin.mahasiswa.edit');  //routing tampilkan form edit mahasiswa
 
     /** Routing untuk tugas mulai dari sini */
+
+
+
+    /** Riwayat Pendidikan */
+
+    Route::get('/admin/pendidikan', 'pendidikanController@index')->name('admin.pendidikan.index'); 
+    Route::post('/admin/pendidikan', 'pendidikanController@store')->name('admin.pendidikan.store');
+    Route::get('/admin/pendidikan/create', 'pendidikanController@create')->name('admin.pendidikan.create'); 
+    Route::delete('/admin/pendidikan/{pendidikan}', 'pendidikanController@destroy')->name('admin.pendidikan.destroy'); 
+    Route::patch('/admin/pendidikan/{pendidikan}', 'pendidikanController@update')->name('admin.pendidikan.update'); 
+    Route::get('/admin/pendidikan/{pendidikan}', 'pendidikanController@show')->name('admin.pendidikan.show');
+    Route::get('/admin/pendidikan/{pendidikan}/edit', 'pendidikanController@edit')->name('admin.pendidikan.edit'); 
+    Route::get('/admin/pendidikan/{type}/{ikan}/{file_id}', 'pendidikanController@getDownload')->name('admin.pendidikan.download');
+
+
     Route::get('pembimbing/submit', 'PembimbingSubmissionController@create')->name('admin.pembimbing.create');
     Route::post('pembimbing/submit', 'PembimbingSubmissionController@store')->name('admin.pembimbing.store');
+
 
 });
 
