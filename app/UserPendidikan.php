@@ -27,7 +27,7 @@ class UserPendidikan extends Model
     // Tambahkan Kode yang diperlukan dibawah ini
     public function user()
     {
-        return $this->hasOne(User::class, 'id');
+        return $this->hasOne(User::class, 'id','user_id');
     }
 
     public function post()

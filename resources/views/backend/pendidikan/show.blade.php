@@ -31,8 +31,13 @@
                     {{ Form::model($pendidikan, []) }}
 
                     <div class="form-group">
-                    <label for="user_id">Email User</label>
-                        {{ Form::select('user_id', $user,null, ['class' => 'form-control-plaintext', 'id' => 'email','readonly' => 'readonly']) }}
+                    <label for="username">Username</label>
+                        {{ Form::select('username', $user,null, ['class' => 'form-control-plaintext', 'id' => 'username','readonly' => 'readonly']) }}
+                    </div>
+
+                    <div class="form-group">
+                    <label for="username">User Type</label>
+                        {{ Form::text('tipe_user', $atu[$tipe[0]], ['class' => 'form-control-plaintext', 'id' => 'tipe_user','readonly' => 'readonly']) }}
                     </div>
 
                     <div class="form-group">

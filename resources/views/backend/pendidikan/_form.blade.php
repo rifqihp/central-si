@@ -1,5 +1,5 @@
 <div class="form-group">
-<label for="user_id">Email User</label>
+<label for="user_id">Username</label>
     {{ Form::select('user_id',$user, null, ['class' => 'form-control', 'id' => 'user_id']) }}
 </div>
 

@@ -39,7 +39,7 @@
                     <table class="table table-bordered table-striped">
                         <thead>
                         <tr>
-                            <th class="text-center">email</th>
+                            <th class="text-center">Username</th>
                             <th class="text-center">Jenjang</th>
                             <th class="text-center">Nama Sekolah</th>
                             <th class="text-center">Jurusan</th>
@@ -49,7 +49,7 @@
                         <tbody>
                         @foreach($pendidikans as $pendidikan)
                             <tr>
-                                <td class="text-center">{{ $pendidikan->post1->email }}</td>
+                                <td class="text-center">{{ $pendidikan->post1->username}}</td>
                                 <td class="text-center">{{ $pendidikan->post->tingkat }}</td>
                                 <td class="text-center">{{ $pendidikan->nama_sekolah }}</td>
                                 <td class="text-center">{{ $pendidikan->jurusan }}</td>
