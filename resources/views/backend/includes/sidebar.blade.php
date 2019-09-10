@@ -67,6 +67,12 @@
 
                 </ul>
             </li>
+                    {{-- Pengelolaan Nilai Tugas Akhir --}} 
+             <li class="nav-item">
+                        <a class="nav-link" href="{{ route('admin.nilaiTA.index') }}">
+                            <i class="nav-icon fas fa-book"></i> Kelola Nilai Tugas Akhir
+                        </a>
+                    </li>
             
                   {{-- Menu keluarga--}}
              <li class="nav-item">
@@ -98,9 +104,6 @@
                         </a>
                     </li>
 
-               
-            
-                
         </ul>
     </nav>
 

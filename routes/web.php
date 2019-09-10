@@ -54,6 +54,12 @@ Route::post('/admin/mahasiswa/cari', 'pengabdiancariController@show')->name('adm
    Route::get('/admin/pengabdian/{pengabdian}/edit', 'pengabdianController@edit')->name('admin.pengabdian.edit');  //routing tampilkan form edit mahasiswa
 
     /** Routing untuk tugas mulai dari sini */
+    /** Pengelolaan Nilai Tugas Akhir */
+    Route::get('/admin/nilaiTA', 'NilaiTAController@index')->name('admin.nilaiTA.index');  //routing lihat daftar nilaiTA
+    Route::post('/admin/nilaiTA', 'NilaiTAController@store')->name('admin.nilaiTA.store'); //routing simpan data nilai ta baru
+    Route::get('/admin/nilaiTA/create', 'NilaiTAController@create')->name('admin.nilaiTA.create'); //routing tampilkan form data nilaiTA baru
+    Route::patch('/admin/nilaiTA/{id}', 'NilaiTAController@update')->name('admin.nilaiTA.update'); //routing simpan perubahan data nilaiTA
+    Route::get('/admin/nilaiTA/{id}/edit', 'NilaiTAController@edit')->name('admin.nilaiTA.edit');  //routing tampilkan form edit nilaiTA
 
     /** Routing Organisasi Mahasiswa*/
     Route::get('/admin/organisasi-mhs', 'OrganisasiMhsController@index')->name('admin.organisasi-mhs.index');  //routing lihat daftar organisasimhs
@@ -90,8 +96,6 @@ Route::post('/admin/mahasiswa/cari', 'pengabdiancariController@show')->name('adm
     Route::post('/admin/penelitian-user/create', 'PenelitianUserController@store')->name('admin.penelitian-user.store'); //form tambah anggota
     Route::get('/admin/penelitian-user/create/{penelitian}', 'PenelitianUserController@create')->name('admin.penelitian-user.create'); //form tambah anggota
     Route::delete('/admin/penelitian-user/{penelitian}/{user}', 'PenelitianUserController@destroy')->name('admin.penelitian-user.destroy'); //hapus anggota
-
-
 
     Route::get('pembimbing/submit', 'PembimbingSubmissionController@create')->name('admin.pembimbing.create');
     Route::post('pembimbing/submit', 'PembimbingSubmissionController@store')->name('admin.pembimbing.store');
