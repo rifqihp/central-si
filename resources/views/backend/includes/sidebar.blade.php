@@ -36,6 +36,9 @@
                         </a>
                     </li>
 
+
+
+
                 </ul>
             </li>
 
@@ -90,6 +93,14 @@
                             <i class="nav-icon fas fa-book"></i> Kelola Pengabdian
                         </a>
                     </li>
+
+             {{-- Menu Tendik--}}
+                    <li class="nav-item">
+                        <a class="nav-link" href="{{ route('admin.tendik.index') }}">
+                            <i class="nav-icon fas fa-users"></i> Kelola Tendik
+                        </a>
+                    </li> 
+
 
             {{--  PENGELOLAAN PENELITIAN--}}
             <li class="nav-item">

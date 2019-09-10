@@ -93,12 +93,46 @@ Route::post('/admin/mahasiswa/cari', 'pengabdiancariController@show')->name('adm
     Route::get('/admin/penelitian/{penelitian}', 'PenelitianController@show')->name('admin.penelitian.show'); //routing tampilkan detail mahasiswa
     Route::get('/admin/penelitian/{penelitian}/edit', 'PenelitianController@edit')->name('admin.penelitian.edit');  //routing tampilkan form edit mahasiswa
 
-    Route::post('/admin/penelitian-user/create', 'PenelitianUserController@store')->name('admin.penelitian-user.store'); //form tambah anggota
-    Route::get('/admin/penelitian-user/create/{penelitian}', 'PenelitianUserController@create')->name('admin.penelitian-user.create'); //form tambah anggota
-    Route::delete('/admin/penelitian-user/{penelitian}/{user}', 'PenelitianUserController@destroy')->name('admin.penelitian-user.destroy'); //hapus anggota
+     /** Routing untuk tendik */
+    
+    Route::post('/admin/tendik/cari', 'TendikCariController@show')->name('admin.tendikcari.show'); //routing pencarian tendik
+    Route::get('/admin/tendik/cari', 'TendikController@index')->name('admin.tendikcari.index'); //routing pencarian tendik
+    Route::get('/admin/tendik', 'TendikController@index')->name('admin.tendik.index');  //routing lihat daftar tendik
+    Route::post('/admin/tendik', 'TendikController@store')->name('admin.tendik.store'); //routing simpan data tendik baru
+    Route::get('/admin/tendik/create', 'TendikController@create')->name('admin.tendik.create'); //routing tampilkan form data tendik baru
+    Route::delete('/admin/tendik/{tendik}', 'TendikController@destroy')->name('admin.tendik.destroy'); //routing hapus data tendik baru
+    Route::patch('/admin/tendik/{tendik}', 'TendikController@update')->name('admin.tendik.update'); //routing simpan perubahan data tendik
+    Route::get('/admin/tendik/{tendik}', 'TendikController@show')->name('admin.tendik.show'); //routing tampilkan detail tendik
+    Route::get('/admin/tendik/{tendik}/edit', 'TendikController@edit')->name('admin.tendik.edit');  //routing tampilkan form edit tendik
+
+
+//     /** Pengelolaan Penelitian */
+//     Route::get('/admin/penelitian', 'PenelitianController@index')->name('admin.penelitian.index');  //routing lihat daftar mahasiswa
+//     Route::post('/admin/penelitian', 'PenelitianController@store')->name('admin.penelitian.store'); //routing simpan data mahasiswa baru
+//     Route::get('/admin/penelitian/create', 'PenelitianController@create')->name('admin.penelitian.create'); //routing tampilkan form data mahasiswa baru
+//     Route::delete('/admin/penelitian/{penelitian}', 'PenelitianController@destroy')->name('admin.penelitian.destroy'); //routing hapus data mahasiswa baru
+//     Route::patch('/admin/penelitian/{penelitian}', 'PenelitianController@update')->name('admin.penelitian.update'); //routing simpan perubahan data mahasiswa
+//     Route::get('/admin/penelitian/{penelitian}', 'PenelitianController@show')->name('admin.penelitian.show'); //routing tampilkan detail mahasiswa
+//     Route::get('/admin/penelitian/{penelitian}/edit', 'PenelitianController@edit')->name('admin.penelitian.edit');  //routing tampilkan form edit mahasiswa
+
+//     Route::post('/admin/penelitian-user/create', 'PenelitianUserController@store')->name('admin.penelitian-user.store'); //form tambah anggota
+//     Route::get('/admin/penelitian-user/create/{penelitian}', 'PenelitianUserController@create')->name('admin.penelitian-user.create'); //form tambah anggota
+//     Route::delete('/admin/penelitian-user/{penelitian}/{user}', 'PenelitianUserController@destroy')->name('admin.penelitian-user.destroy'); //hapus anggota
 
     Route::get('pembimbing/submit', 'PembimbingSubmissionController@create')->name('admin.pembimbing.create');
     Route::post('pembimbing/submit', 'PembimbingSubmissionController@store')->name('admin.pembimbing.store');
+
+    // Routing pengelolaan tendik
+    Route::post('/admin/tendik/cari', 'TendikCariController@show')->name('admin.tendikcari.show'); //routing pencarian tendik
+    Route::get('/admin/tendik/cari', 'TendikController@index')->name('admin.tendikcari.index'); //routing pencarian mahasiswa
+    Route::get('/admin/tendik', 'TendikController@index')->name('admin.tendik.index');  //routing lihat daftar tendik
+    Route::post('/admin/tendik', 'TendikController@store')->name('admin.tendik.store'); //routing simpan data tendik baru
+    Route::get('/admin/tendik/create', 'TendikController@create')->name('admin.tendik.create'); //routing tampilkan form data tendik baru
+    Route::delete('/admin/tendik/{tendik}', 'TendikController@destroy')->name('admin.tendik.destroy'); //routing hapus data tendik baru
+    Route::patch('/admin/tendik/{tendik}', 'TendikController@update')->name('admin.tendik.update'); //routing simpan perubahan data tendik
+    Route::get('/admin/tendik/{tendik}', 'TendikController@show')->name('admin.tendik.show'); //routing tampilkan detail tendik
+    Route::get('/admin/tendik/{tendik}/edit', 'TendikController@edit')->name('admin.tendik.edit');  //routing tampilkan form edit tendik
+
 });
 
 Route::get('/', function () {
